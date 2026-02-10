@@ -108,18 +108,24 @@
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
             padding: 4rem 3rem;
-            align-items: center;
+            align-items: start;
         }
 
         .rsvp-image {
             width: 100%;
-            height: 500px;
+            height: 600px;
             object-fit: cover;
             border-radius: 4px;
         }
 
         .rsvp-form {
-            padding: 0 2rem;
+            padding: 0 1rem;
+        }
+
+        .rsvp-form iframe {
+            width: 100%;
+            min-height: 700px;
+            border: none;
         }
 
         /* Section Title Banner */
@@ -330,6 +336,10 @@
                 height: 300px;
             }
 
+            .rsvp-form iframe {
+                min-height: 600px;
+            }
+
             .grand-jour {
                 grid-template-columns: 1fr;
             }
@@ -430,7 +440,12 @@
              class="rsvp-image">
         
         <div class="rsvp-form">
-            <script type="text/javascript" src="https://form.jotform.com/jsform/260232751021038"></script>
+            <iframe
+                id="JotFormIFrame-260232751021038"
+                title="Formulaire RSVP"
+                src="https://form.jotform.com/260232751021038"
+                scrolling="yes">
+            </iframe>
         </div>
     </section>
 
