@@ -374,12 +374,13 @@
             <iframe
                 id="JotFormIFrame-260232751021038"
                 title="Formulaire RSVP"
+                onload="window.parent.scrollTo(0,0)"
                 allowtransparency="true"
-                allow="geolocation; microphone; camera"
+                allow="geolocation; microphone; camera; fullscreen"
                 src="https://form.jotform.com/260232751021038"
                 frameborder="0"
-                scrolling="no"
-                style="width:100%; height:600px; border:none;">
+                style="min-width:100%; max-width:100%; height:600px; border:none;"
+                scrolling="no">
             </iframe>
         </div>
     </section>
@@ -451,29 +452,44 @@
         </div>
     </footer>
     <script>
-        // JotForm iframe auto-resize via postMessage
-        window.addEventListener('message', function(event) {
-            // Format string : "JotFormIFrame-ID:action:value"
-            if (event.data && typeof event.data === 'string' && event.data.indexOf('JotFormIFrame') === 0) {
-                var parts = event.data.split(':');
-                if (parts[2] === 'setHeight') {
-                    var iframe = document.getElementById('JotFormIFrame-' + parts[1]);
-                    if (iframe) {
-                        iframe.style.height = parseInt(parts[3]) + 'px';
-                    }
-                }
+        // JotForm iframe auto-resize — script officiel JotForm
+        window.handleIFrameMessage = function(e) {
+            if (typeof e.data === 'object') { return; }
+            var args = e.data.split(":");
+            var iframe;
+            if (args.length > 2) {
+                iframe = document.getElementById("JotFormIFrame-" + args[args.length - 1]);
+            } else {
+                iframe = document.getElementById("JotFormIFrame");
             }
-            // Format objet (versions récentes de JotForm)
-            if (event.data && typeof event.data === 'object') {
-                var iframe = document.getElementById('JotFormIFrame-260232751021038');
-                if (iframe) {
-                    var h = event.data.height || event.data.value;
-                    if ((event.data.action === 'setHeight' || event.data.type === 'setHeight') && h) {
-                        iframe.style.height = parseInt(h) + 'px';
+            if (!iframe) { return; }
+            switch (args[0]) {
+                case "scrollIntoView":
+                    iframe.scrollIntoView();
+                    break;
+                case "setHeight":
+                    iframe.style.height = args[1] + "px";
+                    break;
+                case "collapseErrorPage":
+                    if (iframe.clientHeight > window.innerHeight) {
+                        iframe.style.height = window.innerHeight + "px";
                     }
-                }
+                    break;
+                case "reloadPage":
+                    window.location.reload();
+                    break;
             }
-        });
+            var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+            if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+                var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
+                iframe.contentWindow.postMessage(JSON.stringify(urls), "*");
+            }
+        };
+        if (window.addEventListener) {
+            window.addEventListener("message", handleIFrameMessage, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onmessage", handleIFrameMessage);
+        }
 
         // Animation on scroll
         const observerOptions = {
