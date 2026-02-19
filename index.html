@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soyez-là pour le oui ! - Zélie & Clément</title>
     <meta name="description" content="Mariage de Zélie et Clément - 27 juin 2026">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --color-primary: #8B2D23;
@@ -22,35 +23,29 @@
             --font-display: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'Montserrat', -apple-system, sans-serif;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: var(--font-body);
             color: var(--color-text);
             line-height: 1.6;
             background-color: var(--color-white);
         }
-
         img {
             max-width: 100%;
             height: auto;
             display: block;
         }
-
         a {
             color: inherit;
             text-decoration: none;
         }
-
         /* Header */
         .header {
             display: flex;
@@ -59,7 +54,6 @@
             padding: 1.5rem 3rem;
             background: var(--color-white);
         }
-
         .header-names {
             font-family: var(--font-body);
             font-size: 0.9rem;
@@ -69,20 +63,17 @@
             border-bottom: 2px solid var(--color-primary);
             padding-bottom: 0.3rem;
         }
-
         .header-date {
             font-family: var(--font-body);
             font-size: 0.9rem;
             font-weight: 400;
             letter-spacing: 0.1em;
         }
-
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 2rem 2rem 0;
         }
-
         .hero-title {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 8vw, 5rem);
@@ -91,17 +82,14 @@
             margin-bottom: 2rem;
             line-height: 1.1;
         }
-
         .hero-title em {
             font-style: italic;
         }
-
         .hero-image {
             width: 100%;
             max-height: 70vh;
             object-fit: cover;
         }
-
         /* RSVP Section */
         .rsvp-section {
             display: grid;
@@ -110,58 +98,49 @@
             padding: 4rem 3rem;
             align-items: start;
         }
-
         .rsvp-image {
             width: 100%;
             height: 600px;
             object-fit: cover;
             border-radius: 4px;
         }
-
         .rsvp-form {
             padding: 0 1rem;
         }
-
         .rsvp-form iframe {
             width: 100%;
-            min-height: 700px;
             border: none;
+            display: block;
         }
-
         /* Section Title Banner */
         .section-banner {
             background: var(--color-primary);
             color: var(--color-white);
             padding: 3rem 4rem;
         }
-
         .section-banner h2 {
             font-family: var(--font-display);
             font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 400;
             margin-bottom: 0.5rem;
         }
-
         .section-banner p {
             font-size: 0.95rem;
             font-style: italic;
             opacity: 0.9;
         }
-
         /* Photo Gallery */
         .gallery {
             display: flex;
             gap: 0;
             overflow: hidden;
         }
-
         .gallery img {
             flex: 1;
             min-width: 0;
             height: 350px;
             object-fit: cover;
         }
-
         /* Le Grand Jour Section */
         .grand-jour {
             padding: 4rem 3rem;
@@ -170,33 +149,28 @@
             gap: 4rem;
             align-items: center;
         }
-
         .grand-jour h2 {
             font-family: var(--font-display);
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 400;
             margin-bottom: 2rem;
         }
-
         .citation {
             text-align: right;
             font-style: italic;
             line-height: 1.8;
         }
-
         .citation-author {
             margin-top: 1rem;
             font-style: normal;
             font-size: 0.9rem;
             color: var(--color-text-light);
         }
-
         .grand-jour-image {
             width: 100%;
             height: 500px;
             object-fit: cover;
         }
-
         /* Programme Section */
         .programme {
             background: var(--color-primary);
@@ -206,18 +180,15 @@
             gap: 2rem;
             padding: 4rem;
         }
-
         .programme-illustration {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
         .programme-illustration img {
             max-width: 300px;
             height: auto;
         }
-
         .programme-content h2 {
             font-family: var(--font-display);
             font-size: clamp(2rem, 4vw, 3rem);
@@ -226,30 +197,25 @@
             text-decoration: underline;
             text-underline-offset: 0.3em;
         }
-
         .programme-item {
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
         }
-
         .programme-item a {
             text-decoration: underline;
             text-underline-offset: 0.2em;
         }
-
         .programme-star {
             text-align: center;
             font-size: 1.5rem;
             margin: 1.5rem 0;
         }
-
         .programme-note {
             margin-top: 2rem;
             font-size: 0.9rem;
             font-style: italic;
             opacity: 0.85;
         }
-
         /* Cagnotte Section */
         .cagnotte {
             display: grid;
@@ -258,7 +224,6 @@
             padding: 4rem;
             align-items: center;
         }
-
         .cagnotte-content h2 {
             font-family: var(--font-display);
             font-size: clamp(1.8rem, 4vw, 2.8rem);
@@ -267,23 +232,19 @@
             line-height: 1.3;
             margin-bottom: 1.5rem;
         }
-
         .cagnotte-content p {
             font-size: 0.95rem;
             line-height: 1.7;
         }
-
         .cagnotte-content a {
             text-decoration: underline;
             color: var(--color-primary);
         }
-
         .cagnotte-image {
             width: 100%;
             height: 450px;
             object-fit: cover;
         }
-
         /* Footer */
         .footer {
             background: var(--color-primary);
@@ -292,33 +253,26 @@
             grid-template-columns: 1fr 1fr;
             padding: 2.5rem 4rem;
         }
-
         .footer-left {
             font-size: 0.95rem;
         }
-
         .footer-left p:first-child {
             margin-bottom: 0.25rem;
         }
-
         .footer-left p:last-child {
             font-style: italic;
         }
-
         .footer-right {
             text-align: right;
             font-size: 0.9rem;
         }
-
         .footer-right p {
             margin-bottom: 0.25rem;
         }
-
         .footer-right a {
             text-decoration: underline;
             text-underline-offset: 0.2em;
         }
-
         /* Responsive */
         @media (max-width: 900px) {
             .header {
@@ -326,79 +280,60 @@
                 gap: 0.5rem;
                 text-align: center;
             }
-
             .rsvp-section {
                 grid-template-columns: 1fr;
             }
-
             .rsvp-image {
                 order: -1;
                 height: 300px;
             }
-
-            .rsvp-form iframe {
-                min-height: 600px;
-            }
-
             .grand-jour {
                 grid-template-columns: 1fr;
             }
-
             .grand-jour-image {
                 order: -1;
                 height: 350px;
             }
-
             .programme {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-
             .programme-illustration {
                 order: -1;
             }
-
             .cagnotte {
                 grid-template-columns: 1fr;
             }
-
             .cagnotte-image {
                 order: -1;
                 height: 350px;
             }
-
             .gallery {
                 flex-wrap: wrap;
             }
-
             .gallery img {
                 flex: 1 1 calc(50% - 0px);
                 min-width: calc(50% - 0px);
                 height: 200px;
             }
-
             .footer {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 1.5rem;
             }
-
             .footer-right {
                 text-align: center;
             }
         }
-
         @media (max-width: 600px) {
             .gallery img {
                 flex: 1 1 100%;
                 min-width: 100%;
             }
-
             .programme, .cagnotte, .grand-jour {
                 padding: 2rem;
             }
         }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -410,7 +345,6 @@
                 transform: translateY(0);
             }
         }
-
         .animate-on-scroll {
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
@@ -418,43 +352,42 @@
     </style>
 </head>
 <body>
-
     <!-- Header -->
     <header class="header">
         <div class="header-names">Clément & Zélie</div>
         <div class="header-date">27 JUIN 2026</div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title">SOYEZ <em>LÀ</em> POUR LE OUI</h1>
-        <img src="https://zelieetclement.fr/_assets/media/4121a9d5c75ed8f21294fd775b588c86.jpg" 
-             alt="Zélie et Clément enlacés" 
+        <img src="https://zelieetclement.fr/_assets/media/4121a9d5c75ed8f21294fd775b588c86.jpg"
+             alt="Zélie et Clément enlacés"
              class="hero-image">
     </section>
-
     <!-- RSVP Section -->
     <section class="rsvp-section" id="rsvp">
-        <img src="https://zelieetclement.fr/_assets/media/d19658f9654f54c3244a40e4522b7ac8.jpg" 
-             alt="Zélie et Clément" 
+        <img src="https://zelieetclement.fr/_assets/media/d19658f9654f54c3244a40e4522b7ac8.jpg"
+             alt="Zélie et Clément"
              class="rsvp-image">
-        
+
         <div class="rsvp-form">
             <iframe
                 id="JotFormIFrame-260232751021038"
                 title="Formulaire RSVP"
+                allowtransparency="true"
+                allow="geolocation; microphone; camera"
                 src="https://form.jotform.com/260232751021038"
-                scrolling="yes">
+                frameborder="0"
+                scrolling="no"
+                style="width:100%; height:600px; border:none;">
             </iframe>
         </div>
     </section>
-
     <!-- Notre Histoire -->
     <section class="section-banner">
         <h2>NOTRE HISTOIRE</h2>
         <p>En quelques instantanés d'un bonheur qui dure...</p>
     </section>
-
     <!-- Photo Gallery -->
     <div class="gallery">
         <img src="https://zelieetclement.fr/_assets/media/8f22dd71b752be08b676e4e9f1a04403.jpg" alt="Zélie et Clément">
@@ -463,13 +396,12 @@
         <img src="https://zelieetclement.fr/_assets/media/3cbfc1ac8cf5be1f8d5e04ded90e06fb.jpg" alt="Zélie et Clément">
         <img src="https://zelieetclement.fr/_assets/media/f2a4f29dbc4040fc22ceb5f84e1f6c41.jpg" alt="Zélie et Clément">
     </div>
-
     <!-- Le Grand Jour -->
     <section class="grand-jour">
         <div>
             <h2>LE GRAND JOUR</h2>
-            <img src="https://zelieetclement.fr/_assets/media/0734dc9ce10e419780683c330ab76b4b.jpg" 
-                 alt="Zélie et Clément" 
+            <img src="https://zelieetclement.fr/_assets/media/0734dc9ce10e419780683c330ab76b4b.jpg"
+                 alt="Zélie et Clément"
                  class="grand-jour-image">
         </div>
         <div class="citation">
@@ -480,11 +412,10 @@
             <p class="citation-author">Maria Casarès à Albert Camus</p>
         </div>
     </section>
-
     <!-- Le Programme -->
     <section class="programme" id="programme">
         <div class="programme-illustration">
-            <img src="https://zelieetclement.fr/_assets/media/7815bbb7be97d2ad13015e3f8fd35e5b.png" 
+            <img src="https://zelieetclement.fr/_assets/media/7815bbb7be97d2ad13015e3f8fd35e5b.png"
                  alt="Illustration danseurs">
         </div>
         <div class="programme-content">
@@ -497,18 +428,16 @@
             <p class="programme-note">Une feuille de route détaillée (parkings, horaires, trajets etc) vous sera communiquée par mail.</p>
         </div>
     </section>
-
     <!-- Cagnotte -->
     <section class="cagnotte">
         <div class="cagnotte-content">
             <h2>NOUS AVONS HÂTE DE CÉLÉBRER NOTRE AMOUR AVEC VOUS</h2>
             <p>Pas de liste de mariage, seulement une cagnotte pour lune de miel, vie future et grands projets ! C'est ici : <a href="https://www.onparticipe.fr/c/zelieetclement" target="_blank">https://www.onparticipe.fr/c/zelieetclement</a></p>
         </div>
-        <img src="https://zelieetclement.fr/_assets/media/f50b0167e1f32d9a6fa04cf6a5f73e4d.jpg" 
-             alt="Zélie et Clément" 
+        <img src="https://zelieetclement.fr/_assets/media/f50b0167e1f32d9a6fa04cf6a5f73e4d.jpg"
+             alt="Zélie et Clément"
              class="cagnotte-image">
     </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-left">
@@ -521,14 +450,36 @@
             <p>Email: <a href="mailto:zelieetclement@gmx.fr">zelieetclement@gmx.fr</a></p>
         </div>
     </footer>
-
     <script>
+        // JotForm iframe auto-resize via postMessage
+        window.addEventListener('message', function(event) {
+            // Format string : "JotFormIFrame-ID:action:value"
+            if (event.data && typeof event.data === 'string' && event.data.indexOf('JotFormIFrame') === 0) {
+                var parts = event.data.split(':');
+                if (parts[2] === 'setHeight') {
+                    var iframe = document.getElementById('JotFormIFrame-' + parts[1]);
+                    if (iframe) {
+                        iframe.style.height = parseInt(parts[3]) + 'px';
+                    }
+                }
+            }
+            // Format objet (versions récentes de JotForm)
+            if (event.data && typeof event.data === 'object') {
+                var iframe = document.getElementById('JotFormIFrame-260232751021038');
+                if (iframe) {
+                    var h = event.data.height || event.data.value;
+                    if ((event.data.action === 'setHeight' || event.data.type === 'setHeight') && h) {
+                        iframe.style.height = parseInt(h) + 'px';
+                    }
+                }
+            }
+        });
+
         // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -537,11 +488,9 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('section, .gallery').forEach(el => {
             observer.observe(el);
         });
     </script>
-
 </body>
 </html>
